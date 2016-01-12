@@ -1,5 +1,6 @@
 export PATH=~/bin:~/.brew/bin:$PATH
 export PROMPT="%~ -> "
+export EDITOR=vim
 
 alias gww='gcc -Wall -Wextra -Werror'
 alias gft='gww -lft -I libft -L libft'
