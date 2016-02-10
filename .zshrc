@@ -12,3 +12,7 @@ alias la='ls -lA'
 ##ALIAS GIT
 alias gst='git status'
 alias gl='git log'
+alias gpl='git pull'
+alias gps='git push'
+
+bindkey -e
