@@ -1,5 +1,6 @@
 export PATH=~/bin:~/.brew/bin:$PATH
-export PROMPT="%~ -> "
+export PROMPT="%B%F{yellow}%n%f%b%  [%*] %F{blue}%B%~%b%f -> "
+export RPROMPT="[%j]"
 export EDITOR=vim
 
 alias gww='gcc -Wall -Wextra -Werror'
@@ -16,3 +17,6 @@ alias gpl='git pull'
 alias gps='git push'
 
 bindkey -e
+
+#History
+setopt HIST_IGNORE_ALL_DUPS
