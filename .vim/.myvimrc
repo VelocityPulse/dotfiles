@@ -56,7 +56,7 @@ augroup filetypec
 	autocmd FileType c,cpp iabbrev #i #include
 augroup END
 
-colorscheme molokai
+colorscheme 256-grayvim
 
 execute pathogen#infect()
 let g:airline_theme='murmur'
