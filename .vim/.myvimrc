@@ -49,17 +49,16 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 
 augroup filetypec
 	autocmd!
-	autocmd FileType c,cpp nnoremap <leader>c I//<Esc>
-	autocmd FileType c,cpp nnoremap <leader>u _2x
-	autocmd FileType c,cpp vnoremap <leader>c I//<Esc>
-	autocmd FileType c,cpp vnoremap <leader>u _2x
+	autocmd FileType c,cpp,go nnoremap <leader>c I//<Esc>
+	autocmd FileType c,cpp,go nnoremap <leader>u _2x
+	autocmd FileType c,cpp,go vnoremap <leader>c I//<Esc>
+	autocmd FileType c,cpp,go vnoremap <leader>u _2x
 	autocmd FileType c,cpp iabbrev #i #include
 augroup END
 
 colorscheme 256-grayvim
 
 execute pathogen#infect()
-let g:airline_theme='murmur'
 
 ""Trailing whitespaces
 highlight ExtraWhitespace ctermbg=red guibg=red
