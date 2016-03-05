@@ -1,5 +1,15 @@
-export PATH=~/bin:~/.brew/bin:$PATH
 export PROMPT="%B%F{yellow}%n%f%b%  [%*] %F{blue}%B%~%b%f -> "
+
+##History
+setopt HIST_IGNORE_ALL_DUPS
+
+if [ -z "$HISTFILE" ]; then
+	HISTFILE=$HOME/.zsh_history
+fi
+
+HISTSIZE=10000
+SAVEHIST=10000
+
 export RPROMPT="[%j]"
 export EDITOR=vim
 
@@ -18,5 +28,8 @@ alias gps='git push'
 
 bindkey -e
 
-#History
-setopt HIST_IGNORE_ALL_DUPS
+export GOPATH=$HOME/go
+
+
+
+export PATH=$GOPATH:~/bin:~/.brew/bin:$PATH
