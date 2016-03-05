@@ -1,0 +1,72 @@
+set nocompatible
+set number
+set noexpandtab
+syntax on
+let mapleader=" "
+set cc=80
+
+set listchars=eol:¬,tab:>\ ,trail:~,extends:>,precedes:<
+"""""MAPINGS
+inoremap kj <Esc>
+nnoremap <Left> <NOP>
+nnoremap <Right> <NOP>
+nnoremap <Down> <NOP>
+nnoremap <Up> <NOP>
+inoremap <Left> <NOP>
+inoremap <Right> <NOP>
+inoremap <Down> <NOP>
+inoremap <Up> <NOP>
+
+nnoremap <leader>j :bn<CR>
+nnoremap <leader>k :bp<CR>
+nnoremap <C-l> <C-w>l
+nnoremap <C-k> <C-w>k
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+
+nnoremap <leader>w :w<CR>
+nnoremap <leader>l :set list!<CR>
+nnoremap <leader>, :sh<CR>
+nnoremap <leader>; mmA;<Esc>`m
+nnoremap <leader>g mmMmngg=G`nzz`m
+nnoremap <leader><leader> i_<Esc>r
+nnoremap <leader>n :noh<CR>
+
+
+nnoremap gj ddp
+nnoremap gk ddkP
+nnoremap go o<Esc>k
+
+""NERDTree
+nnoremap <leader>t :NERDTreeToggle<CR>
+
+"Quitter NERDTree automatiquement a la fermeture du dernier buffer
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+""/NERDTree
+
+"""""/MAPPINGS
+
+augroup filetypec
+	autocmd!
+	autocmd FileType c,cpp nnoremap <leader>c I//<Esc>
+	autocmd FileType c,cpp nnoremap <leader>u _2x
+	autocmd FileType c,cpp vnoremap <leader>c I//<Esc>
+	autocmd FileType c,cpp vnoremap <leader>u _2x
+	autocmd FileType c,cpp iabbrev #i #include
+augroup END
+
+colorscheme molokai
+
+execute pathogen#infect()
+let g:airline_theme='murmur'
+
+""Trailing whitespaces
+highlight ExtraWhitespace ctermbg=red guibg=red
+match ExtraWhitespace /\s\+$/
+autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
+autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+autocmd InsertLeave * match ExtraWhitespace /\s\+$/
+
+
+
