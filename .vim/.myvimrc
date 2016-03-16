@@ -3,19 +3,10 @@ set number
 set noexpandtab
 syntax on
 let mapleader=" "
-set cc=80
 
 set listchars=eol:¬,tab:>\ ,trail:~,extends:>,precedes:<
-"""""MAPINGS
+""MAPINGS
 inoremap kj <Esc>
-nnoremap <Left> <NOP>
-nnoremap <Right> <NOP>
-nnoremap <Down> <NOP>
-nnoremap <Up> <NOP>
-inoremap <Left> <NOP>
-inoremap <Right> <NOP>
-inoremap <Down> <NOP>
-inoremap <Up> <NOP>
 
 nnoremap <leader>j :bn<CR>
 nnoremap <leader>k :bp<CR>
@@ -31,6 +22,10 @@ nnoremap <leader>; mmA;<Esc>`m
 nnoremap <leader>g mmMmngg=G`nzz`m
 nnoremap <leader><leader> i_<Esc>r
 nnoremap <leader>n :noh<CR>
+nnoremap <leader>t i<tab><Esc>
+
+noremap j gj
+noremap k gk
 
 
 nnoremap gj ddp
@@ -67,5 +62,33 @@ autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
 autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
 autocmd InsertLeave * match ExtraWhitespace /\s\+$/
 
+""SYNTASTIC
+" plugins expect bash - not fish, zsh, etc
+set shell=bash
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+autocmd BufWritePre * :%s/\s\+$//e
+set viminfo='100,\"2500,:200,%,n~/.viminfo
 
 
+
+
+"""GO
+" use goimports for formatting
+let g:go_fmt_command = "goimports"
+let g:syntastic_go_checkers = ['go', 'golint', 'errcheck']
+
+" turn highlighting on
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_structs = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_build_constraints = 1
+
+au FileType go nmap <Leader>s <Plug>(go-implements)
+au FileType go nmap <Leader>i <Plug>(go-info)
+au FileType go nmap <Leader>ds <Plug>(go-def-split)
+au FileType go nmap <Leader>dv <Plug>(go-def-vertical)
+au FileType go nmap <Leader>dt <Plug>(go-def-tab)
+au FileType go nmap <Leader>gd <Plug>(go-doc)
+au FileType go nmap <Leader>gv <Plug>(go-doc-vertical)
