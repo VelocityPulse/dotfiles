@@ -51,9 +51,12 @@ augroup filetypec
 	autocmd FileType c,cpp iabbrev #i #include
 augroup END
 
-colorscheme 256-grayvim
+set t_Co=256
+colorscheme molokai
 
 execute pathogen#infect()
+
+let g:airline_theme='murmur'
 
 ""Trailing whitespaces
 highlight ExtraWhitespace ctermbg=red guibg=red

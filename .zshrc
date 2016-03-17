@@ -1,4 +1,4 @@
-export PROMPT="%B%F{yellow}%n%f%b%  [%*] %F{blue}%B%~%b%f -> "
+export PROMPT="%B%F{red}%n%f%b%  [%*] %F{blue}%B%~%b%f -> "
 
 ##History
 setopt HIST_IGNORE_ALL_DUPS
