@@ -33,3 +33,6 @@ export GOPATH=$HOME/go
 
 
 export PATH=$GOPATH:~/bin:~/.brew/bin:$PATH
+
+alias vim='$HOME/.brew/bin/vim'
+alias vi=vim
