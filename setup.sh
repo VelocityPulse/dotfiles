@@ -10,6 +10,7 @@ fi
 ln -s $pwd/.vim $HOME/.vim
 ln -s $pwd/.vim/vimrc $HOME/.vimrc
 ln -s $pwd/.zshrc $HOME/.zshrc
+ln -s $pwd/.gitconfig $HOME/.gitconfig
 
 # goimports
 go get -u golang.org/x/tools/cmd/goimports

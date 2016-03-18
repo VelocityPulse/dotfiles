@@ -78,7 +78,8 @@ func makeSymLinks() {
 	cfgFiles := []string{
 		"/.vim",
 		"/.vimrc",
-		"/.zshrc"}
+		"/.zshrc",
+		"/.gitconfig"}
 	for _, f := range cfgFiles {
 		if !exists(home + f) {
 			linkTarget := pwd + f

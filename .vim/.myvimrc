@@ -79,7 +79,8 @@ set viminfo='100,\"2500,:200,%,n~/.viminfo
 """GO
 " use goimports for formatting
 let g:go_fmt_command = "goimports"
-let g:syntastic_go_checkers = ['go', 'golint', 'errcheck']
+let g:syntastic_go_checkers = ['golint']
+"let g:syntastic_go_checkers = ['go', 'golint', 'errcheck']
 
 " turn highlighting on
 let g:go_highlight_functions = 1

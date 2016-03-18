@@ -36,3 +36,5 @@ export PATH=$GOPATH:~/bin:~/.brew/bin:$PATH
 
 alias vim='$HOME/.brew/bin/vim'
 alias vi=vim
+
+alias goinfre='mkdir /tmp/goinf;mount -t nfs zfs-student-1:/tank/sgoinfre/goinfre /tmp/goinf'
