@@ -82,6 +82,7 @@ func makeSymLinks() {
 		"/.gitconfig"}
 	for _, f := range cfgFiles {
 		if !exists(home + f) {
+			fmt.Println("Generating", strings.Replace(f, "/", "", -1))
 			linkTarget := pwd + f
 			if err = os.Symlink(linkTarget, home+f); err != nil {
 				fmt.Println("Unable to create symlink", home+f)

@@ -144,6 +144,7 @@ if &t_Co > 255
 		hi CursorLine               ctermbg=234   cterm=none
 		hi CursorLineNr ctermfg=208               cterm=none
 	endif
+	hi Perso   ctermfg=154
 	hi Boolean         ctermfg=135
 	hi Character       ctermfg=144
 	hi Number          ctermfg=135

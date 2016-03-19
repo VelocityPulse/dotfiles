@@ -20,19 +20,19 @@ alias ls='ls -G'
 alias ll='ls -l'
 alias la='ls -lA'
 
-##ALIAS GIT
-alias gst='git status'
-alias gl='git log'
-alias gpl='git pull'
-alias gps='git push'
+
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
 
 bindkey -e
 
 export GOPATH=$HOME/go
+export GOBIN=$GOPATH/bin
 
 
 
-export PATH=$GOPATH:~/bin:~/.brew/bin:$PATH
+export PATH=$GOBIN:~/bin:~/.brew/bin:$PATH
 
 alias vim='$HOME/.brew/bin/vim'
 alias vi=vim
