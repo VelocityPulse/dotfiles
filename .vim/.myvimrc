@@ -1,7 +1,7 @@
 set nocompatible
 set number
 set noexpandtab
-syntax on
+"syntax on
 let mapleader=" "
 
 set listchars=eol:¬,tab:>\ ,trail:~,extends:>,precedes:<
@@ -52,7 +52,7 @@ augroup filetypec
 augroup END
 
 set t_Co=256
-colorscheme molokai
+colorscheme blank
 
 execute pathogen#infect()
 
